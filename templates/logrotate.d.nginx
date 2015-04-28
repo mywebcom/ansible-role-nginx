@@ -1,4 +1,4 @@
-/home/{{web_user}}/log/nginx-access.log /home/{{web_user}}/log/error.log {
+/home/{{web_user}}/log/nginx-access.log /home/{{web_user}}/log/nginx-error.log {
     create 0644 www www
     daily
     missingok

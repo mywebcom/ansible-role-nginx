@@ -1,6 +1,15 @@
 ---
+- name: add python package for adding new repository
+  apt: name=python-software-properties state=present
+  
+- name: add new repository for nginx
+  apt_repository: repo=ppa:nginx/stable state=present
+  
 - name: install nginx
   apt: name=nginx state=present
+  
+- name: apt upgrade
+  apt: update_cache=yes force=yes
   
 - name: ensure nginx start on boot
   service: name=nginx enabled=yes
@@ -11,6 +20,3 @@
   
 - name: copy nginx logrotate script
   template: src=logrotate.d.nginx dest=/etc/logrotate.d/nginx
-  
-
-  
