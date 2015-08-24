@@ -1,5 +1,5 @@
 /home/{{web_user}}/log/nginx-access.log /home/{{web_user}}/log/nginx-error.log {
-    create 0644 www www
+    create 0644 {{web_user}} {{web_user}}
     daily
     missingok
     rotate 52
